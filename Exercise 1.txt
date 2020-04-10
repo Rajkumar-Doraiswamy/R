@@ -1,0 +1,234 @@
+Question 1:
+> z
+[1] 45 56 78
+> z<- c(a=45, b=56,c=78)
+> z
+ a  b  c 
+45 56 78
+------------------------
+Question 2:
+Is it necessary that the naming label be within quotes? Which of the
+following is correct, or both are:
+
+	x<- c(abc="AB", cde= "FF", hh = "dsf")
+	OR?
+	x<- c("abc"="AB", "cde"= "FF", "hh" = "dsf")
+
+
+Ans:Both are correct.
+-------------------------------------------------------
+Question 3:
+In R or RStudio, type:
+	example(data.frame)
+
+And you get lots of examples on data.frame command. Where do you
+think the examples are coming from?
+
+Ans: The examples are coming from lib.loc a character vector of directory names of R libraries, or NULL. The default value of NULL corresponds to all libraries currently known. If the default is used, the loaded packages are searched before the libraries.
+------------------------------------------------------
+Question 4: 
+You can install many of the software from within R. Perform the following steps to
+download Rtools.exe and install it on your machine. Rtools.exe is used to compile
+R packages available in sourcecode form.
+
+	install.packages("installr")
+	library(installr)
+	install.Rtools()
+Ans : Done installing RTools
+---------------------------------------
+Question 5:
+After you have performed Q 4 above, execute following commands:
+
+	library(installr)
+	installr()
+
+A window appears to show you what all can be installed. Install NppToR.
+With NppToR, you can issue all R-commands directly from notepad++.
+
+Ans: Yes the window popped and installed NppToR. 
+> installr()
+Please wait a moment while downloading (you may not see R respond for half a minute)
+   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   367  100   367    0     0   1235      0 --:--:-- --:--:-- --:--:--  1235
+100  811k  100  811k    0     0   226k      0  0:00:03  0:00:03 --:--:--  261k
+The file was downloaded successfully into:
+ C:\Users\doraisr\AppData\Local\Temp\RtmpeY7CXv/NppToR-2.7.0.exe 
+
+Running the installer now...
+
+Installation status:  TRUE . Removing the file:
+ C:\Users\doraisr\AppData\Local\Temp\RtmpeY7CXv/NppToR-2.7.0.exe 
+ (In the future, you may keep the file by setting keep_install_file=TRUE) 
+---------------------------------------------------------------------------------------
+Question 6:
+For many packages (not commands), R has extensive documentation available
+on your machine. Type the following command and  write randomly three packages
+on which vignettes are available:
+
+	vignette()
+Ans:
+Vignettes in package ‘colorspace’:
+
+hcl-colors               HCL-Based Color Palettes in R (source, pdf)
+
+Vignettes in package ‘corrplot’:
+
+corrplot-intro           An Introduction to the corrplot package (source,
+                         html)
+
+Vignettes in package ‘curl’:
+
+intro                    The curl package: a modern R interface to libcurl
+                         (source, html)
+
+Vignettes in package ‘digest’:
+
+sha1                     sha1() versus digest() (source, html)
+
+Vignettes in package ‘dplyr’:
+
+compatibility            dplyr compatibility (source, html)
+dplyr                    Introduction to dplyr (source, html)
+programming              Programming with dplyr (source, html)
+two-table                Two-table verbs (source, html)
+window-functions         Window functions (source, html)
+-------------------------------------------------------------------------
+Question7:
+Some of the vignettes are quite detailed and yet simple. For example,
+install packages: 'nycflights13' and 'dplyr'. Execute few examples provided
+in the following vignette:
+
+	vignette('dplyr')
+
+Package, dplyr, is very useful for data manipulation
+
+Ans:
+Vignettes in package ‘dplyr’:
+
+compatibility            dplyr compatibility (source, html)
+dplyr                    Introduction to dplyr (source, html)
+programming              Programming with dplyr (source, html)
+two-table                Two-table verbs (source, html)
+window-functions         Window functions (source, html)
+------------------------------------------------------------------------------
+Question 8:
+What is the result of following function:
+	cos(c(0, pi, pi/4, pi/2, pi))
+
+What do you conclude from the results?
+
+Ans: 
+> cos(c(0, pi, pi/4, pi/2, pi))
+[1]  1.000000e+00 -1.000000e+00  7.071068e-01  6.123032e-17 -1.000000e+00
+---------------------------------------------------------------------------
+Question 9:
+In R, even a scalar is a vector. Try:
+
+	d<-7
+	class(d)
+
+What is the output?
+Ans:
+> d<-7
+> class(d)
+[1] "numeric"
+----------------------------------------------------------------------------
+Question 10:
+R supoorts four special numeric values: Inf, -Inf, NaN and NA .
+	Inf : Infinity
+	-Inf: Minus infinity
+	NaN : Not a number
+	NA : missing value.
+Now perform the following operations:
+
+	c(Inf + 1, -Inf +1, Inf - Inf)
+	c(1/Inf, Inf/1, Inf/Inf)
+	c(sqrt(Inf), sin(Inf))
+	c(NA + NA, NA + NaN, NaN + NA, NaN + NaN)
+What answers you get? Are they expected?
+Ans:
+> c(Inf + 1, -Inf +1, Inf - Inf)
+[1]  Inf -Inf  NaN
+
+> c(1/Inf, Inf/1, Inf/Inf)
+[1]   0 Inf NaN
+
+> c(sqrt(Inf), sin(Inf))
+[1] Inf NaN
+Warning message:
+In sin(Inf) : NaNs produced
+
+> c(NA + NA, NA + NaN, NaN + NA, NaN + NaN)
+[1]  NA  NA NaN NaN
+-----------------------------------------------------------------------------
+Question 11:
+Logical vectors has following operators:
+ !   is used for not
+ &   is used for and
+ |   is used for or
+
+Generate two logical vectors, x and y as follows:
+x <- 1:10 >= 5
+y <- 1:10 %% 2 == 0    # %% returns the remainder from division
+
+Now answer the results of following:
+	!x
+	x & y
+	x | y
+Ans:
+> x <- 1:10 >= 5
+> x
+ [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+> y
+ [1] FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE
+
+> !x
+ [1]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+> x&y
+ [1] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE  TRUE
+> x|y
+ [1] FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+--------------------------------------------------------------------------
+Question 12:
+Create following variables:
+	xrt <- c(1,2,3)
+	try <- c(3,4,5)
+Remove from memory ONLY these two variables with rm() command.
+
+Ans:
+> rm(xrt)
+> rm(try)
+------------------------------------------------------------------------
+Question 13:
+Do factors help in reducing memory usgae? Try the following:
+
+	z<-rep(c("abc", "cde"), 1000)
+	z
+	object.size(z)
+	zz <- as.factor(z)
+	object.size(zz)
+
+What is your answer?
+Yes Factors help in reducing Memory usage.
+> object.size((z))
+16160 bytes
+> object.size(zz)
+8560 bytes
+------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

@@ -1,0 +1,88 @@
+Question # 1
+--------------
+Ans : b
+"A" "B" "C"
+
+Question # 2
+--------------
+Ans : b
+second bucket 1 item to be changed 2[1]
+
+Question # 3
+--------------
+
+Ans : list
+
+Question # 4
+--------------
+ d1   d2   d3   d4   d5   d6   d7   d8   d9  d10  d11  d12  d13  d14  d15   e1   e2   e3   e4   e5 
+ "a"  "b"  "c"  "7" "10"  "6"  "7"  "5"  "2"  "7"  "9"  "6"  "5"  "3"  "4"  "4"  "1"  "9" "21" "21" "25" "24" "22" 
+  e6   e7   e8   e9  e10  e11  e12  e13  e14  e15 
+"21" "24" "21" "21" "23" "21" "23" "23" "23" "25"
+
+Question # 5
+--------------
+ sum(unlist(a))
+[1] 30
+
+Question # 6
+--------------
+> Newlist$a+1
+ [1]  2  3  4  5  6  7  8  9 10 11
+
+Question # 7
+--------------
+ x[4]<-c(z="NewItem")
+> x
+$a
+[1]  5  6  7  8  9 10
+
+$c
+[1] "Hello"
+
+$d
+[1] "AA"
+
+[[4]]
+[1] "NewItem"
+
+Question # 8
+--------------
+
+> y <- list("a", "b", "c")
+> names(y[1]) <-"one"
+> names(y[2]) <-"two"
+> names(y[3]) <-"three"
+> names(y)
+NULL
+
+
+Question # 9
+--------------
+> x <- list(y=1:10, t="Hello", f="TT", r=5:20)
+> length(x)
+[1] 4
+> length(x$r)
+[1] 16
+
+Question # 10
+--------------
+> string <- "Grand Opening"
+> strsplit(string," ")
+[[1]]
+[1] "Grand"   "Opening"
+
+Question # 11
+-------------
+> y <- list("a", "b", "c")
+> q <- list("A", "B", "C", "a", "b", "c")
+> 
+> q[!(q%in%y)]
+[[1]]
+[1] "A"
+
+[[2]]
+[1] "B"
+
+[[3]]
+[1] "C"
